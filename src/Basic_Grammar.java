@@ -4,9 +4,7 @@ import java.util.Scanner;
 public class Basic_Grammar {
 	
 	public static void main(String args[]){
-		
-		study_xunhuan();
-		
+		for_findsushu();
 	}
 	
 	//数据转换
@@ -36,7 +34,7 @@ public class Basic_Grammar {
 		//&和&&的区别，当运算符两边的表达式的结果都为true时，整个运算结果才为true，否则，只要有一方为false，则结果为false，&&还具有短路的功能，即如果第一个表达式为false，则不再计算第二个表达式
 	}
 	
-	//if,switch,for,while
+	//if,switch
 	public static void study_xunhuan(){
 		System.out.println("请输入一个数字");
 		Scanner input = new Scanner(System.in);
@@ -108,10 +106,122 @@ public class Basic_Grammar {
 			break;
 		}
 		*/
+		}
+	
+	//for
+	//甲乙丙丁四个人加工零件
+	public static void for_jiagong() {
+		//加工的总零件数为370，如果甲加工的零件数多10，如果已加工的零件数少20，如果丙加工的零件数乘以2，如果丁加工的零件数除以2，则4人的加工数相等，求甲乙丙丁加工零件数
 		
-		
-		
+		for(int x=1;x<=370;x++) {
+			if((x-10)+(x+20)+(x/2)+(x*2) ==370){
+				System.out.println("找到x: " + x);
+			}
+		}
+	}
+	
+	//鸡兔同笼
+	public static void for_jitutonglong() {
+		//兔子加小鸡一共50只，兔子腿（4）加小鸡腿共160支，求兔子和小鸡数量
+		for (int x=1;x<=50;x++) {
+			if((2*x) + 4*(50-x) == 160) {
+				System.out.println("找到x: " + x);
+			}
+		}
 		
 	}
+	
+	//寻找水仙花
+	public static void for_flower() {
+		//类似153，个位数字的立方+十位数字的立方+百位数字的立方 = 本身，寻找100-999之间的水仙花
+		
+		for(int x =100;x<=999;x++) {
+			if((
+				((x/100)*(x/100)*(x/100))+
+				((x/10%10)*(x/10%10)*(x/10%10))+
+				((x%10)*(x%10)*(x%10))) ==x) {
+				System.out.println("找到x: " + x);
+			}
+		}
+	}
 
+	//画三角星星
+	public static void for_drawStar() {
+		//********* 1      9
+		//**** **** 2  4 + 1 + 4
+		//***   *** 3  3 + 3 + 3
+		//**     ** 4  2 + 5 + 2
+		//*       * 5  1 + 7 + 1
+		for(int i=1;i<=5;i++) {
+			if(i==1) {
+				System.out.println("*********");
+			}
+			else{
+				for(int j=1;j<=6-i;j++) {
+					System.out.print("*");
+				}
+				for(int j=1;j<=2*i-3;j++) {
+					System.out.print(" ");
+				}
+				for(int j=1;j<=6-i;j++) {
+					if(j==6-i) {
+						System.out.println("*");
+					}
+					else{
+						System.out.print("*");
+					}
+				}
+			}
+		}
+	}
+
+	//   1       i==1  3 1-1 0
+	//  121      i==2  2 1-2 1-1
+	// 12321     i==3  1 1-3 2-1
+	//1234321    i==4  0 1-4 3-1
+	public static void for_number() {
+		for(int i=1;i<=4;i++) {
+			for(int j=1;j<=4-i;j++) {
+				System.out.print(" ");
+			}
+			for(int j=1;j<=i;j++) {
+				System.out.print(j);
+			}			
+			for(int j=i-1;j>=1;j--) {
+				System.out.print(j);
+			}
+			System.out.println();	
+		}
+	}
+
+	//算术乘法表
+	//1*1=1                 i==1 
+	//1*2=2 2*2=4           i==2 
+	//1*3=3 2*3=6 3*3=9     i==3 
+	public static void for_count() {
+		for(int i=1;i<=9;i++) {
+			for(int j=1;j<i+1;j++) {
+				System.out.print(j + "*" + i + "=" + i*j + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	//寻找2-100之间的素数，只能被1和自己整除的数  2，3，5，7
+	public static void for_findsushu() {
+		for(int num=2;num<=100;num++) {
+			boolean flag = true;
+			for(int i=2;i<num;i++) {
+				if(num%i==0) {
+					flag = false;
+					break;//到了1000内的素数，就跳出循环，并输出结果。
+				}
+			}
+			if(flag) {
+				System.out.println(num);
+			}
+		}
+		
+	}
+	
 }
