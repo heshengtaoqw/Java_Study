@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Basic_Grammar {
 	
 	public static void main(String args[]){
-		for_findsushu();
+		while_sellwatermelon();
 	}
 	
 	//数据转换
@@ -164,22 +164,19 @@ public class Basic_Grammar {
 					System.out.print(" ");
 				}
 				for(int j=1;j<=6-i;j++) {
-					if(j==6-i) {
-						System.out.println("*");
-					}
-					else{
 						System.out.print("*");
-					}
 				}
+				System.out.println();
 			}
 		}
 	}
 
-	//   1       i==1  3 1-1 0
-	//  121      i==2  2 1-2 1-1
-	// 12321     i==3  1 1-3 2-1
-	//1234321    i==4  0 1-4 3-1
+	//数字金字塔
 	public static void for_number() {
+		//   1       i==1  3 1-1 0
+		//  121      i==2  2 1-2 1-1
+		// 12321     i==3  1 1-3 2-1
+		//1234321    i==4  0 1-4 3-1
 		for(int i=1;i<=4;i++) {
 			for(int j=1;j<=4-i;j++) {
 				System.out.print(" ");
@@ -194,11 +191,11 @@ public class Basic_Grammar {
 		}
 	}
 
-	//算术乘法表
-	//1*1=1                 i==1 
-	//1*2=2 2*2=4           i==2 
-	//1*3=3 2*3=6 3*3=9     i==3 
+	//算术乘法表 
 	public static void for_count() {
+		//1*1=1                 i==1 
+		//1*2=2 2*2=4           i==2 
+		//1*3=3 2*3=6 3*3=9     i==3
 		for(int i=1;i<=9;i++) {
 			for(int j=1;j<i+1;j++) {
 				System.out.print(j + "*" + i + "=" + i*j + " ");
@@ -211,8 +208,10 @@ public class Basic_Grammar {
 	public static void for_findsushu() {
 		for(int num=2;num<=100;num++) {
 			boolean flag = true;
-			for(int i=2;i<num;i++) {
-				if(num%i==0) {
+			for(int i=2;i<num;i++)//先剔除自己和1，在1和小于
+			{
+				if(num%i==0)//如果能被小于自己的数（除1以外）整除（求模为0），
+				{
 					flag = false;
 					break;//到了1000内的素数，就跳出循环，并输出结果。
 				}
@@ -223,5 +222,79 @@ public class Basic_Grammar {
 		}
 		
 	}
+	
+	//while
+	//水池放水问题
+	public static void while_shuiguan() {
+		//水池已装满120L水，现在有一根出水管30L/h和一根进水管18L/h，计算什么时候水池的水放完
+		int x=0;
+		while(120-30*x+18*x>0) {
+			x++;
+			if(120-30*x+18*x==0){
+				System.out.println(x);
+				break;
+			}
+		}
+		
+		for(int y=0;120-30*y+18*y >= 0;y++) {
+			if(120-30*y+18*y==0){
+				System.out.println(y);
+				break;
+			}
+		}
+	}
+	
+	//画星星
+	public static void while_drawstar() {
+		int x=1;
+		while(x<=4) {
+			int y=1;
+			while(y<=4-x) {
+				System.out.print(" ");
+				y++;
+			}
+			int z=1;
+			while(z<=2*x-1) {
+				System.out.print("*");
+				z++;
+			}
+			int u=1;
+			while(u<=4-x) {
+				System.out.print(" ");
+				u++;
+			}
+			System.out.println("");
+			x++;
+		}
+	}
+	
+	//相遇问题
+	public static void while_encount() {
+		//A和B相距1000km，a向b以7km/h移动，b向a以18km/h移动，求多久相遇
+		int x=0;
+		while(1000-7*x-18*x > 0) {
+			x++;
+			if(1000-7*x-18*x==0)
+			{
+				System.out.println(x + " encounted");
+			}
+		}
+	}
+
+	//瓜农卖瓜
+	public static void while_sellwatermelon() {
+		//瓜农一共有1020个西瓜，每天卖一半加2个，问多少天能卖完
+		int x=0;
+		int remind=1020;
+		while(remind>0) {
+			remind = remind/2 - 2;
+			x++;
+			if(remind ==0)
+			{
+				System.out.println(x);
+			}
+		}
+	}
+	
 	
 }
