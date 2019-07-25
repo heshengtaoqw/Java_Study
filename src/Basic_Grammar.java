@@ -222,7 +222,57 @@ public class Basic_Grammar {
 		}
 		
 	}
-	
+	//break,continue,给循环起名字
+		public static void break_test() {
+			for(int i=1;i<=5;i++) {
+				if(i==3) {
+					break;
+				}
+				System.out.print(i + " ");//1 2
+			}
+			
+			for(int i=1;i<=5;i++) {
+				if(i==3) {
+					continue;
+				}
+				System.out.print(i + " ");//1 2 4 5
+			}
+			
+			for(int i=1;i<=5;i++) {
+				for(int j=1;j<=5;j++) {
+					if(j==3) {
+						break;//跳出最近的循环
+					}
+					System.out.print(j + " ");//1 2
+				}
+			}
+			
+			ok:for(int i=1;i<=5;i++) {
+				ko:for(int j=1;j<=5;j++) {
+					if(j==3) {
+						break ok;//跳出ok循环
+					}
+					System.out.print(i + " ");//1 
+				}
+			}
+		}
+			
+		//冒泡排序
+		public static void for_order() {
+			int[] a = {3,5,2,6,1,99,152,65,31};
+			for(int i=0;i<a.length;i++) {//第一层循环控制比较多少轮
+				for(int j=0;j<a.length-i-1;j++) {//第二层循环用于第一轮的比较
+					if(a[j] > a[j+1]) {
+						int c = a[j+1];
+						a[j+1] = a[j];
+						a[j] = c;
+						}
+					}
+			}	
+			for(int i=0;i<=a.length-1;i++) {
+				System.out.print(a[i]+" ");
+			}
+		}
 	//while
 	//水池放水问题
 	public static void while_shuiguan() {
