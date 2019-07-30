@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Array_Study {
+public class Study_2_Array {
 
 	public static void main(String[] args) {
 		xuanze_order();
