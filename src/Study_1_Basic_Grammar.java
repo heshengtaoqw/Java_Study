@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Basic_Grammar {
+public class Study_1_Basic_Grammar {
 	
 	public static void main(String args[]){
 		while_sellwatermelon();
