@@ -1,5 +1,5 @@
 
-public class Dimension_array {
+public class Study_3_Dimension_array {
 
 	public static void main(String[] args) {
 		dynamic_array();
