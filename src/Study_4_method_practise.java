@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class Study_4_method_practise {
 	
@@ -120,12 +120,146 @@ public class Study_4_method_practise {
 
 	}
 		
+	//5 设计一个方法，合并两个数组
+	public void merge_array(int[] a,int[] b) {
+		int[] c = new int[a.length+b.length];
+		int d =c.length-a.length-1;
 		
+		System.out.println("合并前a数组为：");
+		for(int x:a) {
+			System.out.print(x + " ");
+		}
+		System.out.println("");
+		System.out.println("合并前b数组为：");
+		for(int x:b) {
+			System.out.print(x + " ");
+		}
+		System.out.println("");
+		
+		for(int i=0;i<a.length;i++) {
+			c[i] = a[i];
+		}
+		for(int i=0;i<b.length;i++) {
+			c[d] = b[i];
+			d++;
+		}
+		
+		System.out.println("合并后a+b数组为：");
+		for(int x:c) {
+			System.out.print(x + " ");
+		}
+		
+	}
 
+	//6 设计一个方法，按照最大位置拆分
+	public void split_num(int[] a) {
+		int max=0;
+		int a2_index=0;
+		for(int x:a) {
+			System.out.print(x + " ");
+		}
+		System.out.println("");
+
+		for(int i=1;i<a.length;i++) {
+			if(a[max]<a[i]) {
+				max=i;
+			}	
+		}
+		
+		int[] a1 = new int[max];
+		int[] a2 = new int[a.length-max];
+		
+		for(int i=0;i<max;i++) {
+			a1[i] = a[i];
+		}
+		for(int i=max;i<a.length;i++) {
+			a2[a2_index] = a[i];
+			a2_index++;
+		}
+		
+		for(int x:a1) {
+			System.out.print(x + " ");
+		}
+		System.out.println("");
+		for(int x:a2) {
+			System.out.print(x + " ");
+		}
+		
+	}
 	
+	//7 设计一个方法，用来去掉数组中的0元素
+	public int[] remove_zero(int[] a) {
+		
+		int count =0;
+		int a1_index=0;
+		
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]!=0) {
+				count++;
+			}
+		}
+		int[] a1 = new int[count];
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]!=0) {
+				a1[a1_index] = a[i];
+				a1_index++;
+			}
+		}
+		return a1;
+	}
 	
-	
-	
+	//8 设计一个方法，用来存储给定范围内的素数(给范围)
+	public void find_sushu(int min,int max) {
+		int count=max-min+1;
+		int sushu_count=0;
+		int[] a = new int[count];
+		int index =0;
+		for(int i=min;i<=max;i++) {
+			a[index] = i;
+			index++;
+		}
+			
+		for(int i=0;i<a.length;i++) {
+			boolean flag=true;
+			for(int j=2;j<=a[i]/2;j++) {
+				if(a[i]%j==0){
+					System.out.println(a[i] + "不是素数");
+					flag = false;
+					break;
+				}
+			}
+			if(flag) {
+				System.out.println(a[i] + "是素数");
+				sushu_count++;
+			}
+		}
+		 
+		int sushu_array[] = new int[sushu_count];
+		int sushu_index=0;
+		
+		for(int i=0;i<a.length;i++) {
+			boolean flag=true;
+				for(int j=2;j<=a[i]/2;j++) {
+					if(a[i]%j==0) {
+						//System.out.println(num + "不是素数");
+						flag=false;
+						break;
+					}
+				
+				}
+				if(flag) {
+					//System.out.println(num + "是素数");
+					sushu_array[sushu_index]=a[i];
+					sushu_index++;
+				}
+			}
+		for(int y:sushu_array) {
+			System.out.print(y+" ");
+		}
+		
+	}
 	
 	
 	public static void main(String[] args) {
@@ -134,28 +268,56 @@ public class Study_4_method_practise {
 		/* 0
 			s4.drawStar(6,"left");
 		*/
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 		/* 1
 			int[] a= {1,2,3,4};
 			int[] b= {5,6,7,8};
 			s4.changeNum(a,b);
 		*/
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 		/* 2
 			int[] a= {1,2,3,4,6};
 			s4.switchHead(a);
 		*/
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 		/* 3
 			int[] a= {200,1,2,3,4,6,5,9,7,5,10,90,100,101,92};
 			s4.findMaxOrMin(a,"Min");
 		*/
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+		/*	4
 			int[] a= {200,1,2,3,4,6,5,9,7,5,10,90,100,101,92};
 			System.out.println("请输入一个数：");
 			Scanner input = new Scanner(System.in);
 			int num = input.nextInt();
 			s4.findNum(a, num);
+		*/
+//-------------------------------------------------------------------------------------------------
+		/*  5
+			int[] a= {1,2,3};
+			int[] b= {4,5,6,7};
+			s4.merge_array(a,b);
+		*/
+//-------------------------------------------------------------------------------------------------
+		/*  6	
+			int[] a= {200,1,2,3,4,6,5,9,999,7,5,10,90,100,101,92};
+			s4.split_num(a);
+		*/
+//-------------------------------------------------------------------------------------------------
+		/*  7
+			int[] a= {200,1,2,0,3,4,6,5,90,0,999,7,5,10,90,0,100,101,92};
+			int[] b = s4.remove_zero(a);
+			for(int x:b)
+			{
+				System.out.print(x + " ");
+			}
+		*/
+//-------------------------------------------------------------------------------------------------
+		/*  8
+			s4.find_sushu(5, 53);
+		*/
+//-------------------------------------------------------------------------------------------------
+
 	}
 	
 }
