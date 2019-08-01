@@ -278,7 +278,10 @@ public class Study_4_method_practise {
 		return a;
 	}
 		
+	//10 动态参数列表 array(int... x), 可以传任意个(0个)int类型的参数
+	public void dynatic_array(int...x) {
 		
+	}
 	
 	
 	public static void main(String[] args) {
@@ -343,6 +346,11 @@ public class Study_4_method_practise {
 				System.out.print(x + " ");
 			}
 		*/
+//-------------------------------------------------------------------------------------------------
+		/*
+		 * s4.dynamic
+		 */
+
 	}
 	
 }
