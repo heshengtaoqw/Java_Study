@@ -261,6 +261,25 @@ public class Study_4_method_practise {
 		
 	}
 	
+	//9 √∞≈›≈≈–Ú£® ‰»ÎΩµ–ÚªÚ…˝–Ú£©
+	public int[] order(int[] a, String order_method) {
+		int u =a.length;
+		for(int i=0;i<a.length-1;i++) {
+			for(int j=a.length-1;j>i;j--) {
+				if((order_method.equals("desc")&&a[j]<a[j-1]) || (order_method.equals("asc")&&a[j]>a[j-1])){
+					{
+						int swap = a[j];
+						a[j] = a[j-1];
+						a[j-1] = swap;
+						}
+				}
+			}
+		}
+		return a;
+	}
+		
+		
+	
 	
 	public static void main(String[] args) {
 		
@@ -317,7 +336,13 @@ public class Study_4_method_practise {
 			s4.find_sushu(5, 53);
 		*/
 //-------------------------------------------------------------------------------------------------
-
+		/* 9
+			int[] a= {1,5,6,4};
+			int[] b =s4.order(a, "desc");
+			for(int x:b) {
+				System.out.print(x + " ");
+			}
+		*/
 	}
 	
 }
