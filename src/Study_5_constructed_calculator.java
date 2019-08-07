@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+//设计一个计算器，完成加减乘除的计算
 public class Study_5_constructed_calculator {
 
 	
