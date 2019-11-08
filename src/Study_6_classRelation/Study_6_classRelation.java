@@ -1,4 +1,4 @@
-package Study_classRelation;
+package Study_6_classRelation;
 
 
 /*
@@ -22,7 +22,8 @@ public class Study_6_classRelation {
 //		Car car = new Car("宝马",320,"red",new Wheel("米其林",17,"red"));
 //		car.showCar();
 		Farmer farmer = new Farmer();
+		Pig pig = farmer.feedPig(5);
 		Butcher butcher = new Butcher();
-		butcher.killPig(farmer.feedPig(5));
+		butcher.killPig(pig);
 	}
 }

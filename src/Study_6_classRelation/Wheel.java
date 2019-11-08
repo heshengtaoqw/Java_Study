@@ -1,4 +1,4 @@
-package Study_classRelation;
+package Study_6_classRelation;
 
 //³µÂÖÀà
 public class Wheel {
