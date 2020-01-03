@@ -1,3 +1,4 @@
+package Study_6_extends;
 
 public class Study_6_extends_Dog extends Study_6_extends_Animal {
 	

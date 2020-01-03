@@ -1,3 +1,4 @@
+package Study_4_class_method;
 public class Study_4_class {
 	
 	public void print(int x) {//方法的定义在存储区，new出对象时拷贝到堆内存中，方法的使用在栈内存中

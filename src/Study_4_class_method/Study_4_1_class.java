@@ -1,3 +1,4 @@
+package Study_4_class_method;
 
 public class Study_4_1_class {
 	int a;

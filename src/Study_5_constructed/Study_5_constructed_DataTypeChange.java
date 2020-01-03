@@ -1,3 +1,4 @@
+package Study_5_constructed;
 import java.util.Scanner;
 
 

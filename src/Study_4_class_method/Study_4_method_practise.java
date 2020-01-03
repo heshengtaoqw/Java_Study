@@ -1,3 +1,4 @@
+package Study_4_class_method;
  import java.util.Scanner;
 
 public class Study_4_method_practise {
