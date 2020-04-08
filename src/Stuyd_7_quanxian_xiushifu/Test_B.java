@@ -9,7 +9,7 @@ public class Test_B extends Test_A {
 		Test_A TA = new Test_A();
 		TB.protectedMethod();
 		TB.publicMethod();
-		TA.protectedMethod();
+		//TA.protectedMethod();
 	}
 	
 	
