@@ -24,7 +24,7 @@ public class Temp {
 		}
 	
 		if(!flag) {
-			System.out.println("用户或者密码不正确");
+			System.out.println("用户或者密码不正确11");
 		}
 		
 	}
