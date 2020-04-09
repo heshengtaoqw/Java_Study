@@ -216,7 +216,7 @@ public class Study_2_Array {
 	public static void num_bubble_ordder() {
 		int[] a= {3,45,9,4,3,5,78,1,561,1548,61,648,15,6};
 		for(int j=1;j<=a.length-2;j++) {//依次找到第二小，第三小的数
-			for(int i=a.length-1;i>=1;i--) {//每做一次循环，找到该次循环最小的数，并排列到最上层
+			for(int i=a.length-1;i>=j;i--) {//每做一次循环，找到该次循环最小的数，并排列到最上层
 				if(a[i]<a[i-1]) {
 					int c = a[i-1];
 					a[i-1] = a[i];
