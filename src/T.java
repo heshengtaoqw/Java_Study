@@ -46,7 +46,7 @@ public class T {
 			}
 		}
 		for(int b:a) {
-			System.out.println(b11222);
+			System.out.println(b112224444);
 		}
 	}
 
