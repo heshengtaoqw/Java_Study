@@ -33,10 +33,6 @@ public class T {
 			}
 		}
 		System.out.println(min);
-		System.out.println(b112224444);
-		System.out.println(b112224444);
-		System.out.println(b112224444);
-		System.out.println(b112224444);
 	} 
 
 	public void order_max(int[] a) {
@@ -50,9 +46,6 @@ public class T {
 			}
 		}
 		for(int b:a) {
-			System.out.println(b112224444);
-			System.out.println(b112224444);
-			System.out.println(b112224444);
 			System.out.println(b112224444);
 			System.out.println(b112224444);
 			System.out.println(b112224444);
